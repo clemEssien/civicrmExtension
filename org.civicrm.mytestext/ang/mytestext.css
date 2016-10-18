@@ -1,0 +1,160 @@
+/* Add any CSS rules for Angular module "mytestext" */
+
+
+
+body {
+  background:#353a40;
+}
+
+table {
+  border-collapse: separate;
+  background:#fff;
+  @include border-radius(5px);
+  margin:50px auto;
+  @include box-shadow(0px 0px 5px rgba(0,0,0,0.3));
+}
+
+thead {
+  @include border-radius(5px);
+}
+
+thead th {
+  font-family: 'Patua One', cursive;
+  font-size:16px;
+  font-weight:400;
+  color:#fff;
+
+  text-align:left;
+  padding:20px;
+  border-top:1px solid #858d99;
+  
+  &:first-child {
+   @include border-top-left-radius(5px); 
+  }
+
+  &:last-child {
+    @include border-top-right-radius(5px); 
+  }
+}
+tr:hover
+{
+	 background:#CCC;
+}
+tr:nth-child(even):hover{background-color: #ccc
+}
+
+tbody tr td {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:400;
+  color:#5f6062;
+  font-size:13px;
+  padding:20px 20px 20px 20px;
+  border-bottom:1px solid #e0e0e0;
+  
+}
+
+tbody tr:nth-child(2n) {
+  background:#f0f3f5;
+}
+
+tbody tr:last-child td {
+  border-bottom:none;
+  &:first-child {
+    @include border-bottom-left-radius(5px);
+  }
+  &:last-child {
+    @include border-bottom-right-radius(5px);
+  }
+}
+
+tbody:hover > tr td {
+  @include opacity(0.5);
+  
+  /* uncomment for blur effect */
+  /* color:transparent;
+  @include text-shadow(0px 0px 2px rgba(0,0,0,0.8));*/
+}
+
+tbody:hover > tr:hover td {
+  @include text-shadow(none);
+  color:#2d2d2d;
+  @include opacity(1.0);
+}
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+ul.pagination li {display: inline;}
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+button
+{
+	background:#41507d;;
+	border-radius:4px;
+	padding:5px;
+	color:#fff
+}
+#date-container
+{
+	border:#003 1px solid black;
+	width:100%;
+	display:block;
+	overflow:auto
+}
+#date-div
+{
+	border:#003 1px solid green;
+	width:33.3333%;
+	float:left;
+	padding-left:2px
+}
+div.center 
+{	
+	text-align: center;
+}
+ul.pagination li a:hover:not(.active) {background-color: #69C;color:#fff}
+
+.xouter{
+width:97%;
+margin-left:1%;
+display:block;
+overflow:auto;
+}
+.xleftcol
+{
+float: left;
+width: 32%;
+}
+.xmiddlecol
+{
+float: left;
+width: 32%;
+margin-left:2%
+}
+.xrightcol
+{
+float:left;
+width: 32%;
+margin-left:2%;
+
+display:block;
+overflow:auto;
+}
+
+.datepickerdemo md-content {
+padding-bottom: 200px; 
+}
+.datepickerdemo .validation-messages {
+font-size: 11px;
+color: darkred;
+margin: 10px 0 0 25px; 
+}

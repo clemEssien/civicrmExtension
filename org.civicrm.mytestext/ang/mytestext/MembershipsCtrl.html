@@ -1,0 +1,56 @@
+<div class="crm-container">
+   <div crm-ui-debug="myMembership">myMembership</div>
+
+   <div crm-ui-accordion="{title: ts('Filter')}">
+      <form  ng-submit="dateSearch(start, end)"> 
+         <div class="xouter">     
+             <div class="xleftcol">
+                <h4>Start Date</h4>
+                <ng-datepicker ng-model="start"  format="YYYY-MM-DD" placeholder="Pick start date"></ng-datepicker>
+             </div>
+			 <div class="xmiddlecol">
+                <h4>End Date</h4>            
+                <ng-datepicker ng-model="end"  format="YYYY-MM-DD"  id="end" placeholder="Pick end date"></ng-datepicker>
+            </div>
+            <div class="xrightcol">
+                <h4>&nbsp;</h4>     
+                <input type="submit"  id="submit" value="Search"/>
+            </div>
+      </form>      
+   </div>
+    
+ 
+</div>
+
+<div crm-ui-accordion="{title: ts('Memberships')}">
+  <table>
+    <thead style="background:#036" bgcolor="#003366">
+       <tr>
+         <th class="th">Id</th>
+         <th class="th">Name</th>
+         <th class="th">Source</th>
+         <th class="th">Relationship</th>
+         <th class="th">Start Date</th>
+         <th class="th">End Date</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr dir-paginate="member in myMembership|itemsPerPage:5">
+             <td>{{member.id}}</td>
+             <td>{{member.membership_name}}</td>
+             <td>{{member.source}}</td>
+             <td>{{member.relationship_name}}</td>
+             <td>{{member.start_date}}</td>
+             <td>{{member.end_date}}</td>
+       </tr>
+   </tbody>
+  </table> 
+   <div class="center">
+	     <dir-pagination-controls
+            max-size="5"
+            direction-links="true"
+            boundary-links="true">
+        </dir-pagination-controls>  
+    </div>
+        <div class="center">{{total}} record(s) returned</div>		     
+  </div>  
